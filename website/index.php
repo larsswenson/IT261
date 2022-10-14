@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/styles.css" type="text/css" rel="stylesheet" />
-    <title>Home page</title>
-  </head>
-
-  <body>
-    <header>
-      <div class="header-inner">
-        <a href="index.html">
-          <img id="logo" src="images/logo.jpg" alt="logo"/>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Daily</a></li>
-            <li><a href="">Project</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Gallery</a></li>
-          </ul>
-        </nav>
-      </div> <!-- end header-inner -->
-    </header>
+<?php include('./includes/header.php');?>
+    
     <div id="wrapper">
     <div id="hero">
         <img class="sea_ms" id="mariners" src="images/mariners.png" alt="mariners" />
@@ -40,20 +15,5 @@
         <h3>Headline 3 in the aside!</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </aside>
-    <footer>
-        <ul>
-            <li>Copyright &copy;
-                2022</li>
-            <li>All Rights Reserved</li>
-            <li><a href="../index.php">Web Design by Lars Swenson</a></li>
-            <li><a id="html-checker" href="#">HTML Validation</a></li>
-            <li><a id="css-checker" href="#">CSS Validation</a></li>
-            </ul>
-            <script>
-                    document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
-                    document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-            </script>
-    </footer>
-    </div> <!-- end wrapper -->
-  </body>
-</html>
+
+    <?php include('./includes/footer.php'); ?>
