@@ -47,7 +47,7 @@ break;
     $coffee = '<h2>Monday is our regular latte day</h2>';
     $pic = './images/latte.jpg';
     $alt = 'Regular Latte';
-    $content = '<p>The Latte<b></b> or caffè latte is a milk coffee that is a made up of one or two shots of 
+    $content = '<p><b>The Latte</b> or caffè latte is a milk coffee that is a made up of one or two shots of 
     espresso, steamed milk and a final, thin layer of frothed milk on top. If you don\'t drink dairy milk, you can easily 
     swap it for a plant-based alternative like soy, oat or coconut milk.</p>';
 break;
