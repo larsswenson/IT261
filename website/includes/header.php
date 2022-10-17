@@ -13,8 +13,9 @@ switch(THIS_PAGE) {
   break;
 
   case 'daily.php':
-  $title = 'Daily Page of our Website Project';  
+  $title = 'Daily Electric Guitar Page';  
   $body = 'daily inner';
+  $headline = 'Daily Electric Guitar';
   break;
 
   case 'project.php':
@@ -33,6 +34,44 @@ switch(THIS_PAGE) {
   break;
 };
 
+if (isset($_GET['today'])) {
+  $today = $_GET['today'];
+} else {
+  $today = date('l');
+}
+
+switch ($today) {
+  case 'Monday':
+      $color = 'pink';
+      $none = '';
+      break;
+  case 'Tuesday':
+      $color = 'orange';
+      $none = '';
+      break;
+  case 'Wednesday':
+      $color = 'lightblue';
+      $none = '';
+      break;
+  case 'Thursday':
+      $color = 'peachpuff';
+      $none = '';
+      break;
+  case 'Friday':
+      $color = 'violet';
+      $none = '';
+      break;
+  case 'Saturday':
+      $color = 'lightgreen';
+      $none = '';
+      break;
+  case 'Sunday':
+      $color = 'cyan';
+      $none = '';
+      break;
+}
+
+
 //navigational array
 $nav = array(
   'index.php' => 'Home',
@@ -45,7 +84,13 @@ $nav = array(
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html class= "<?php
+    if(basename($_SERVER['PHP_SELF']) !== 'daily.php') {
+        echo $none;
+    } else {
+        echo $color;
+    }
+?>" lang= "en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,7 +124,6 @@ $nav = array(
                   echo '<li><a style = "color: green" href = "'.$key.'">'.$value.'</a></li>';
               }
             }
-          // end foreach
             ?>
           </ul>
         </nav>

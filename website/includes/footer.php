@@ -1,7 +1,15 @@
 <footer>
         <ul>
             <li>Copyright &copy;
-                2022</li>
+            <?php
+            $date_current = date('Y');
+            $date_created = 2022;
+            if ($date_current == $date_created) {
+                echo $date_current;
+            } else {
+                echo '' . $date_created . ' - ' . $date_current . '';
+            }
+            ?></li>
             <li>All Rights Reserved</li>
             <li><a href="../index.php">Web Design by Lars Swenson</a></li>
             <li><a id="html-checker" href="#">HTML Validation</a></li>
