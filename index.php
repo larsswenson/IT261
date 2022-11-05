@@ -62,6 +62,13 @@
             <li><a href="weeks/week5/currency3.php">currency3.php</a></li>
             <li><a href="weeks/week5/null.php">null.php</a></li>
         </ul>
+        <h3>Week 6</h3>
+        <ul>
+            <li><a href="weeks/week6/form.php">form.php</a></li>
+            <li><a href="weeks/week6/form2.php">form2.php</a></li>
+            <li><a href="weeks/week6/.php">.php</a></li>
+            <li><a href="weeks/week6/.php">.php</a></li>
+        </ul>
     </aside>
     
     </div>
