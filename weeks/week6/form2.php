@@ -1,14 +1,25 @@
 <?php
+ob_start();
+
+$first_name = '';
+$last_name = '';
+$email = '';
+$phone = '';
+$gender = '';
+$wines = '';
+$regions = '';
+$comments = '';
+$privacy = '';
 
 $first_name_error = '';
 $last_name_error = '';
 $email_error = '';
-$gender_error = '';
 $phone_error = '';
+$gender_error = '';
 $wines_error = '';
+$regions_error = '';
 $comments_error = '';
 $privacy_error = '';
-$regions_error = '';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['first_name'])) {
@@ -26,15 +37,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $email = $_POST['email'];
     }
-    if (empty($_POST['gender'])) {
-        $gender_error = 'Please select your gender!';
-    } else {
-        $gender = $_POST['gender'];
-    }
     if (empty($_POST['phone'])) {
         $phone_error = 'Please enter your phone number!';
     } else {
         $phone = $_POST['phone'];
+    }
+    if (empty($_POST['gender'])) {
+        $gender_error = 'Please select your gender!';
+    } else {
+        $gender = $_POST['gender'];
     }
     if (empty($_POST['wines'])) {
         $wines_error = 'What, no wines?';
@@ -56,8 +67,58 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $regions = $_POST['regions'];
     }
-} // end server request
+// wines function
+function my_wines($wines) {
+    $my_return = '';
+        if(!empty($_POST['wines'])) {
+    $my_return = implode(', ', $_POST['wines']);
+    } else {
+        $wines_error = 'Please select your wines!';
+    }
+    return $my_return;
+} // end function
 
+    if(isset(
+        $_POST['first_name'],
+        $_POST['last_name'],
+        $_POST['email'],
+        $_POST['phone'],
+        $_POST['gender'],
+        $_POST['wines'],
+        $_POST['regions'],
+        $_POST['comments'],
+        $_POST['privacy']
+    )) {
+        $to = 'lars.swenson@seattlecolleges.edu';
+        $subject = 'Test Email on ' .date('m/d/y, h i A');
+        $body = '
+            First name: '.$first_name.' '.PHP_EOL.'
+            Last name: '.$last_name.' '.PHP_EOL.'
+            Email: '.$email.' '.PHP_EOL.'
+            Phone: '.$phone.' '.PHP_EOL.'
+            Gender: '.$gender.' '.PHP_EOL.'
+            Wines: '.my_wines($wines).' '.PHP_EOL.'
+            Regions: '.$regions.' '.PHP_EOL.'
+            Comments: '.$comments.' '.PHP_EOL.'
+        ';
+
+    $headers = array(
+        'From' => 'noreply@mystudentswa.com'
+    );
+        
+    if(!empty($first_name && 
+              $last_name && 
+              $email && 
+              $phone && 
+              $gender && 
+              $wines && 
+              $regions && 
+              $comments)) {
+        mail($to, $subject, $body, $headers);
+        header('Location: thx.php');
+        }
+    } // end isset
+} // end server request
 
 ?>
 <!DOCTYPE html>
@@ -165,8 +226,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span class = "error"><?php echo $regions_error; ?></span>
                 <label>Comments:</label>
                     <textarea name = "comments"><?php if(isset($_POST['comments'])) 
-                            echo htmlspecialchars($_POST['comments']); ?>
-                    </textarea>
+                            echo htmlspecialchars($_POST['comments']); ?></textarea><br>
                     <span class = "error"><?php echo $comments_error; ?></span>
                 <label>Privacy:</label>
                     <ul>

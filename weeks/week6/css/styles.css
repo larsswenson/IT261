@@ -5,28 +5,23 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     background: beige;
 }
-
 form {
     max-width: 400px;
     margin: 20px auto;
 }
-
 fieldset {
     border: 1px solid thistle;
     padding: 10px;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 1.2em;
 }
-
 input[type = text], 
 input[type = email],
 input[type = tel] {
@@ -35,7 +30,6 @@ input[type = tel] {
     height: 30px;
     margin-bottom: 10px;
 }
-
 input[type = submit] {
     display: block;
     margin-bottom: 10px;
@@ -46,8 +40,16 @@ input[type = submit] {
     margin-bottom: 8px;
     text-align: center;
 }
-
 form ul {
     margin-bottom: 10px;
     list-style-type: none;
 }
+select, textarea {
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    height: 140px;
+}
+

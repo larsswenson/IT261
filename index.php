@@ -66,8 +66,7 @@
         <ul>
             <li><a href="weeks/week6/form.php">form.php</a></li>
             <li><a href="weeks/week6/form2.php">form2.php</a></li>
-            <li><a href="weeks/week6/.php">.php</a></li>
-            <li><a href="weeks/week6/.php">.php</a></li>
+            <li><a href="weeks/week6/functions.php">functions.php</a></li>
         </ul>
     </aside>
     

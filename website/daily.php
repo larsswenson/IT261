@@ -1,5 +1,7 @@
-<?php include('./includes/header.php');
-
+<?php 
+include('config.php');
+include('./includes/header.php');?>
+<?php
 switch ($today) {
     case 'Monday':
         $guitar = 'Monday: Gibson Les Paul';
