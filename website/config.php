@@ -2,6 +2,7 @@
 ob_start();
 
 define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
+
 switch(THIS_PAGE) {
   
   case 'index.php':
@@ -73,7 +74,6 @@ switch ($today) {
       break;
 }
 
-
 //navigational array
 $nav = array(
   'index.php' => 'Home',
@@ -96,15 +96,14 @@ function make_links($nav) {
     return $my_return;
 } // end function
 
-// my form's php
-
+// email form
 $first_name = '';
 $last_name = '';
 $email = '';
 $phone = '';
 $gender = '';
-$wines = '';
-$regions = '';
+$tacos = '';
+$salsas = '';
 $comments = '';
 $privacy = '';
 
@@ -113,8 +112,8 @@ $last_name_error = '';
 $email_error = '';
 $phone_error = '';
 $gender_error = '';
-$wines_error = '';
-$regions_error = '';
+$tacos_error = '';
+$salsas_error = '';
 $comments_error = '';
 $privacy_error = '';
 
@@ -134,20 +133,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $email = $_POST['email'];
     }
-    if (empty($_POST['phone'])) {
-        $phone_error = 'Please enter your phone number!';
+    if(empty($_POST['phone'])) { // if empty, type in your number
+        $phone_error = 'Your phone number please!';
+    } elseif(array_key_exists('phone', $_POST)){
+    if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone']))
+        { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+        $phone_error = 'Invalid format!';
     } else {
         $phone = $_POST['phone'];
+    }
     }
     if (empty($_POST['gender'])) {
         $gender_error = 'Please select your gender!';
     } else {
         $gender = $_POST['gender'];
     }
-    if (empty($_POST['wines'])) {
-        $wines_error = 'What, no wines?';
+    if (empty($_POST['tacos'])) {
+        $tacos_error = 'Please select your tacos!';
     } else {
-        $wines = $_POST['wines'];
+        $tacos = $_POST['tacos'];
+    }
+    if ($_POST['salsas'] == NULL) {
+        $salsas_error = 'Please select your salsa!';
+    } else {
+        $salsas = $_POST['salsas'];
     }
     if (empty($_POST['comments'])) {
         $comments_error = 'Please share your thoughts with us!';
@@ -159,18 +168,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $privacy = $_POST['privacy'];
     }
-    if ($_POST['regions'] == NULL) {
-        $regions_error = 'Please select your region!';
-    } else {
-        $regions = $_POST['regions'];
-    }
-// wines function
-function my_wines($wines) {
+
+// tacos function
+function my_tacos($tacos) {
     $my_return = '';
-        if(!empty($_POST['wines'])) {
-    $my_return = implode(', ', $_POST['wines']);
+        if(!empty($_POST['tacos'])) {
+    $my_return = implode(', ', $_POST['tacos']);
     } else {
-        $wines_error = 'Please select your wines!';
+        $tacos_error = 'Please select your tacos!';
     }
     return $my_return;
 } // end function
@@ -181,12 +186,12 @@ function my_wines($wines) {
         $_POST['email'],
         $_POST['phone'],
         $_POST['gender'],
-        $_POST['wines'],
-        $_POST['regions'],
+        $_POST['tacos'],
+        $_POST['salsas'],
         $_POST['comments'],
         $_POST['privacy']
     )) {
-        $to = 'lars.swenson@seattlecolleges.edu';
+        $to = 'szemeo@mystudentswa.com';
         $subject = 'Test Email on ' .date('m/d/y, h i A');
         $body = '
             First name: '.$first_name.' '.PHP_EOL.'
@@ -194,8 +199,8 @@ function my_wines($wines) {
             Email: '.$email.' '.PHP_EOL.'
             Phone: '.$phone.' '.PHP_EOL.'
             Gender: '.$gender.' '.PHP_EOL.'
-            Wines: '.my_wines($wines).' '.PHP_EOL.'
-            Regions: '.$regions.' '.PHP_EOL.'
+            Tacos: '.my_tacos($tacos).' '.PHP_EOL.'
+            Salsas: '.$salsas.' '.PHP_EOL.'
             Comments: '.$comments.' '.PHP_EOL.'
         ';
 
@@ -208,13 +213,27 @@ function my_wines($wines) {
               $email && 
               $phone && 
               $gender && 
-              $wines && 
-              $regions && 
-              $comments)) {
+              $tacos && 
+              $salsas && 
+              $comments) &&
+              preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
         mail($to, $subject, $body, $headers);
         header('Location: thx.php');
         }
     } // end isset
-} // end server request
+}// end server request
+
+// random photos
+$photos[0] = 'photo1';
+$photos[1] = 'photo2';
+$photos[2] = 'photo3';
+$photos[3] = 'photo4';
+$photos[4] = 'photo5';
+
+function rand_pics($photos) {
+    $i = rand(0, 4);
+    $selected_image = ''. $photos[$i].'.jpg';
+    echo '<img src = "images/'.$selected_image.'" alt = "'.$photos[$i].'">';      
+}
 
 ?>
