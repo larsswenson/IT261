@@ -35,6 +35,13 @@ switch(THIS_PAGE) {
   $title = 'Gallery Page of our Website Project';  
   $body = 'gallery inner';
   break;
+
+  case 'thx.php':
+    $title = 'Thank You Page of our Website Project';
+    $body = 'thx inner';
+    $headline = 'Thank you...';
+    break;
+
 };
 
 if (isset($_GET['today'])) {

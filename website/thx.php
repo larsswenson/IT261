@@ -5,10 +5,8 @@ include('./includes/header.php');?>
 <div id= "wrapper">
 
     <main>
-        <h1>Thank you for filling out the tacos form!</h1>
-        <?php 
-        include ('./includes/form.php'); 
-        ?>
+        <h1><?php echo $headline; ?></h1>
+        <h2>...for filling out the tacos form!</h2>
     </main>
     
     <aside>
