@@ -28,7 +28,7 @@ if(defined('DEBUG') && DEBUG)
       echo 'Error message: <b> '.$errorMsg.'</b>';
       die();
   }  else {
-      echo ' Houston, we have a problem!';
+      echo 'Houston, we have a problem!';
       die();
   }
     

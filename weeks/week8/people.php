@@ -1,6 +1,11 @@
 <?php
 include('config.php');
+include('./includes/header.php');
+?>
 
+<div id = "wrapper">
+<main>
+<?php
 $sql = 'SELECT * FROM people';
 
 // connect to database
@@ -17,12 +22,27 @@ if(mysqli_num_rows($result) > 0) {
         echo '
         <h2>Information about: '.$row['first_name'].'</h2>
             <ul>
-                <li><b>First Name:</b>'.$row['first_name'].'</li>
-                <li><b>Last Name:</b>'.$row['last_name'].'</li>
-                <li><b>Birthdate:</b>'.$row['birthdate'].'</li>
+                <li><b>First Name: </b>'.$row['first_name'].'</li>
+                <li><b>Last Name: </b>'.$row['last_name'].'</li>
+                <li><b>Birthdate: </b>'.$row['birthdate'].'</li>
             </ul>
-        <p>For more information about '.$row['first_name'].', 
-        click <a href = "people-view.php?id = '.$row['people_id'].'">here</a></p>
+        <p>For more information about '.$row['first_name'].', click <a href = "people-view.php?id = '.$row['people_id'].'">here</a></p>
         ';
     } // end while
-} // end if number of rows > 0
+} else { // end if number of rows > 0
+    echo 'Nobody is home!';
+} // end else
+
+// release server
+@mysqli_free_result($result);
+
+// close connection
+@mysqli_close($iConn);
+?>
+</main>
+    <aside>
+        <h3>Displaying random images here!</h3>
+    </aside>
+</div>
+<!-- end wrapper -->
+<?php include('./includes/footer.php');
