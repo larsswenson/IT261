@@ -5,7 +5,7 @@ include('./includes/header.php');?>
 switch ($today) {
     case 'Monday':
         $guitar = 'Monday: Gibson Les Paul';
-        $pic = 'images/lespaul.jpg';
+        $pic = './images/lespaul.jpg';
         $alt = 'Gibson Les Paul';
         $content = 'The Gibson Les Paul is a solid body electric guitar that was first sold by the Gibson Guitar Corporation 
         in 1952. The guitar was designed by factory manager John Huis and his team with input from and endorsement by guitarist 
@@ -16,7 +16,7 @@ switch ($today) {
 
     case 'Tuesday':
         $guitar = 'Tuesday: Fender Telecaster';
-        $pic = 'images/tele.jpg';
+        $pic = './images/tele.jpg';
         $alt = 'Fender Telecaster';
         $content = 'The Fender Telecaster, colloquially known as the Tele, is an electric guitar produced by Fender. Together 
         with its sister model the Esquire, it is the world\'s first mass-produced, commercially successful solid-body electric
@@ -26,7 +26,7 @@ switch ($today) {
 
     case 'Wednesday':
         $guitar = 'Wednesday: Gibson SG';
-        $pic = 'images/sg.jpg';
+        $pic = './images/sg.jpg';
         $alt = 'Gibson SG';
         $content = 'The Gibson SG is a solid-body electric guitar model introduced by Gibson in 1961 as the Gibson Les Paul 
         SG. It remains in production today in many variations of the initial design. The SG (where "SG" refers to Solid 
@@ -35,7 +35,7 @@ switch ($today) {
 
     case 'Thursday':
         $guitar = 'Thursday: Fender Stratocaster';
-        $pic = 'images/strat.png';
+        $pic = './images/strat.png';
         $alt = 'Fender Stratocaster';
         $content = 'The Fender Stratocaster, colloquially known as the Strat, is a model of electric guitar designed from 1952 
         into 1954 by Leo Fender, Bill Carson, George Fullerton, and Freddie Tavares. The Fender Musical Instruments Corporation 
@@ -45,7 +45,7 @@ switch ($today) {
 
     case 'Friday':
         $guitar = 'Friday: Guild Starfire';
-        $pic = 'images/starfire.jpg';
+        $pic = './images/starfire.jpg';
         $alt = 'Guild Starfire';
         $content = 'The Guild Starfire made its way onto the scene in 1960. The Starfire I had one DeArmond single-coil, 24 3/4″ scale, 
         20 fret rosewood fingerboard and a cherry finish. The II model was much the same but included two DeArmond pickups 
@@ -55,7 +55,7 @@ switch ($today) {
 
     case 'Saturday':
         $guitar = 'Saturday: Danelectro Shorthorn';
-        $pic = 'images/danelectro.jpg';
+        $pic = './images/danelectro.jpg';
         $alt = 'Danelectro Shorthorn';
         $content = 'The Danelectro Shorthorn line of guitars are a dual cutaway hollow bodied design, made of Masonite and 
         poplar. The original models were introduced in 1959 to replace the U model guitars, and were in production until the 
@@ -64,7 +64,7 @@ switch ($today) {
 
     case 'Sunday':
         $guitar = 'Sunday: Rickenbacker 330';
-        $pic = 'images/rickenbacker.jpg';
+        $pic = './images/rickenbacker.jpg';
         $alt = 'Rickenbacker 330';
         $content = 'The Rickenbacker 330 is part of Rickenbacker\'s 300 series of guitars, the series for which Rickenbacker 
         is perhaps best known. The 330 entered the Rickenbacker product line in 1958, though at the time the 300 series of 
@@ -96,4 +96,4 @@ switch ($today) {
         <img src= "<?php echo $pic; ?>" alt= "<?php echo $alt; ?>" />
     </aside>
     
-    <?php include('includes/footer.php'); ?>
+    <?php include('./includes/footer.php'); ?>

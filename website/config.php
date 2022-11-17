@@ -240,7 +240,7 @@ $photos[4] = 'photo5';
 function rand_pics($photos) {
     $i = rand(0, 4);
     $selected_image = ''. $photos[$i].'.jpg';
-    echo '<img src = "images/'.$selected_image.'" alt = "'.$photos[$i].'">';      
+    echo '<img src = "./images/'.$selected_image.'" alt = "'.$photos[$i].'">';      
 }
 
 ?>

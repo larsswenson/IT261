@@ -75,6 +75,13 @@
             <li><a href="weeks/week7/pictures.php">pictures.php</a></li>
             <li><a href="weeks/week7/random.php">random.php</a></li>
         </ul>
+        <h3>Week 8</h3>
+        <ul>
+            <li><a href="weeks/week8/people.php">people.php</a></li>
+            <li><a href="weeks/week8/.php">.php</a></li>
+            <li><a href="weeks/week8/.php">.php</a></li>
+            <li><a href="weeks/week8/.php">.php</a></li>
+        </ul>
     </aside>
     
     </div>
