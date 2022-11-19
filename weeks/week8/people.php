@@ -43,6 +43,23 @@ if(mysqli_num_rows($result) > 0) {
 </main>
     <aside>
         <h3>Displaying random images here!</h3>
+        <?php
+            $photos[0] = 'photo1';
+            $photos[1] = 'photo2';
+            $photos[2] = 'photo3';
+            $photos[3] = 'photo4';
+            $photos[4] = 'photo5';
+
+            function random_images($photos) {
+                $my_return = '';
+                $i = rand(0, 4);
+                $selected_image = ''.$photos[$i].'.jpg';
+                $my_return = '<img src="./images/'.$selected_image.'" alt="'.$photos[$i].'">';
+                return $my_return; 
+            }
+            
+            echo random_images($photos);
+        ?>
     </aside>
 </div>
 <!-- end wrapper -->
