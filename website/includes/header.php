@@ -17,7 +17,7 @@
     <header>
       <div class = "header-inner">
         <a href = "index.php">
-          <img id = "logo" src = "images/logo.jpg" alt = "logo"/>
+          <img id="logo" src="images/logo.jpg" alt = "logo"/>
         </a>
         <nav>
           <ul>

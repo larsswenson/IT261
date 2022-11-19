@@ -5,7 +5,7 @@ include('./includes/header.php');?>
     <div id = "wrapper">
     <div><?php echo rand_pics($photos); ?></div>
     <div id = "hero">
-        <img class = "sea_ms" src = "./images/mariners.png" alt = "mariners">
+        <img class ="sea_ms" src="./images/mariners.png" alt = "mariners">
     </div> <!-- end hero -->
     <main>
         <h1>Welcome to our Web App Programming Class!</h1>

@@ -18,7 +18,7 @@
             <li><a href="./weeks/week5/calculator3.php">Calculator</a></li>
             <li><a href="./website/contact.php">Email</a></li>
             <li><a href="">Database</a></li>
-            <li><a href="">Gallery</a></li>
+            <li><a href="./website/gallery.php">Gallery</a></li>
         </ul>
     </nav>
 <main>
@@ -79,8 +79,6 @@
         <ul>
             <li><a href="weeks/week8/people.php">people.php</a></li>
             <li><a href="weeks/week8/people-view.php">people-view.php</a></li>
-            <li><a href="weeks/week8/.php">.php</a></li>
-            <li><a href="weeks/week8/.php">.php</a></li>
         </ul>
     </aside>
     

@@ -5,6 +5,7 @@ include('./includes/header.php');
 
 <div id = "wrapper">
 <main>
+    <h1>Welcome to the People Database Exercise!</h1>
 <?php
 $sql = 'SELECT * FROM people';
 
@@ -26,7 +27,7 @@ if(mysqli_num_rows($result) > 0) {
                 <li><b>Last Name: </b>'.$row['last_name'].'</li>
                 <li><b>Birthdate: </b>'.$row['birthdate'].'</li>
             </ul>
-        <p>For more information about '.$row['first_name'].', click <a href = "people-view.php?id = '.$row['people_id'].'">here</a></p>
+        <p>For more information about '.$row['first_name'].', click <a href="people-view.php?id='.$row['people_id'].'">here</a></p>
         ';
     } // end while
 } else { // end if number of rows > 0

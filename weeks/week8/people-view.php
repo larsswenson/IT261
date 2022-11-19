@@ -40,10 +40,42 @@ include('./includes/header.php');
 <main>
     <h1>Welcome to the People View page!</h1>
         <h2>Introducing you to <?php echo $first_name; ?>'s Page</h2>
-
+            <ul>
+                <?php echo '
+                    <li><b>First Name: </b>'.$first_name.'</li>
+                    <li><b>Last Name: </b>'.$last_name.'</li>
+                    <li><b>Email: </b>'.$email.'</li>
+                    <li><b>Birthdate: </b>'.$birthdate.'</li>
+                    <li><b>Occupation: </b>'.$occupation.'</li>
+                    <li>
+                        <p>'.$details.'</p>
+                    </li>
+                    ';
+                ?>
+            </ul>
+        <p><a href="people.php">Return to the People Page!</a></p>
 </main>
     <aside>
         <h3>This is the aside!</h3>
+            <figure>
+                <img src="./images/people<?php echo $id;?>.jpg" alt="<?php echo $first_name;?>">
+                    <figcaption>
+                        <?php
+                            echo '
+                                '.$first_name.' '.$last_name.', '.$occupation.'
+                            ';
+                        ;?>
+                    </figcaption>
+            </figure>
+        <p><i><?php echo $blurb;?></i></p>
     </aside>
+<?php
+    // release server
+    @mysqli_free_result($result);
+
+        // close connection
+    @mysqli_close($iConn);
+?>
 </div> 
 <!-- end wrapper -->
+<?php include('./includes/footer.php');
