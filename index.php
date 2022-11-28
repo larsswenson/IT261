@@ -80,6 +80,12 @@
             <li><a href="weeks/week8/people.php">people.php</a></li>
             <li><a href="weeks/week8/people-view.php">people-view.php</a></li>
         </ul>
+        <h3>Week 9</h3>
+        <ul>
+            <li><a href="weeks/week9/register.php">register.php</a></li>
+            <li><a href="weeks/week9/login.php">login.php</a></li>
+            <li><a href="weeks/week9/server.php">server.php</a></li>
+        </ul>
     </aside>
     
     </div>

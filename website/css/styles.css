@@ -200,3 +200,11 @@ h1, h2, h3 {
 .cyan {
     background: cyan;
 }
+
+table {
+    border: 1px solid black;
+    margin: 20px auto;
+}
+td {
+    border: 1px solid red;
+}

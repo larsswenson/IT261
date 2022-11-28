@@ -13,6 +13,7 @@ switch(THIS_PAGE) {
   case 'about.php':
   $title = 'About Page of our Website Project';  
   $body = 'about inner';
+  $headline = 'About Page of our Website Project';
   break;
 
   case 'daily.php':
@@ -24,6 +25,13 @@ switch(THIS_PAGE) {
   case 'project.php':
   $title = 'Project Page of our Website Project';  
   $body = 'project inner';
+  $headline = 'Project Page of our Website Project';
+  break;
+
+  case 'project-view.php':
+  $title = 'Project View Page of our Website Project';  
+  $body = 'project-view inner';
+  $headline = 'Project View Page of our Website Project';
   break;
       
   case 'contact.php':
@@ -243,4 +251,31 @@ function rand_pics($photos) {
     echo '<img src = "./images/'.$selected_image.'" alt = "'.$photos[$i].'">';      
 }
 
+// image gallery
+$ramones['Joey_Ramone'] = 'joeyr_Lead Singer of The Ramones.';
+$ramones['Johnny_Ramone'] = 'johnn_Guitarist of The Ramones.';
+$ramones['Dee_Dee_Ramone'] = 'deede_Bassist of The Ramones.';
+$ramones['Tommy_Ramone'] = 'tommy_Drummer of The Ramones.';
+// variable    key           value
+// $name                    $image
+
+
+// database 
+ob_start();  
+define('DEBUG', 'TRUE');
+
+include('credentials.php');
+
+function myError($myFile, $myLine, $errorMsg)
+{
+    if (defined('DEBUG') && DEBUG) {
+        echo 'Error in file: <b> ' . $myFile . ' </b> on line: <b> ' . $myLine . ' </b>';
+        echo 'Error message: <b> ' . $errorMsg . '</b>';
+        die();
+    } else {
+        echo ' Houston, we have a problem!';
+        die();
+    }
+}
 ?>
+
