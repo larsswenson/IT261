@@ -1,8 +1,9 @@
 <?php
 // login page
 include('server.php');
-// include('./includes/header.php');
+include('./includes/header.php');
 ?>
+<div id="wrapper">
 <h1>Login Page</h1>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <fieldset>
@@ -12,6 +13,10 @@ include('server.php');
                 <input type="password" name="password">
                     <button type="submit" class="btn" name="login_user">Login</button>
                     <button type="button" onclick="window.location.href='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>'">Reset</button>
+                <?php include('errors.php'); ?>
         </fieldset>
-
     </form>
+<p>Haven't registered? Please visit the <a href="register.php">registration page!</a></p>
+</div>
+<!--end wrapper-->
+<?php include('./includes/footer.php'); ?>
