@@ -3,7 +3,7 @@ include('server.php');
 include('./includes/header.php');
 ?>
 <div id="wrapper">
-<h1>Register Today!</h1>
+<h1 class="center">Register Today!</h1>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <fieldset>
             <label>First Name</label>
@@ -23,7 +23,7 @@ include('./includes/header.php');
             <?php include('errors.php'); ?>
         </fieldset>
     </form>
-<p>Already registered? Please <a href="login.php">login!</a></p>
+<p class="center">Already registered? Please <a href="login.php">login!</a></p>
 </div>
 <!--end wrapper--> 
 <?php include('./includes/footer.php'); ?>

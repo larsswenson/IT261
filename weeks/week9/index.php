@@ -16,7 +16,11 @@ if(isset($_GET['logout'])) {
 }
 
 include('./includes/header.php');
+?>
 
+<header>
+
+<?php
 // check session success
 if(isset($_SESSION['success'])) : ?>
     <div class="success">
@@ -39,6 +43,7 @@ if(isset($_SESSION['username'])) :?>
 <!--end welcome logout-->
 <?php endif; ?>
 
+</header>
 <div id="wrapper">
     <h1>Welcome to our home page!</h1>
 </div>

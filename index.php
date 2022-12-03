@@ -84,7 +84,6 @@
         <ul>
             <li><a href="weeks/week9/register.php">register.php</a></li>
             <li><a href="weeks/week9/login.php">login.php</a></li>
-            <li><a href="weeks/week9/server.php">server.php</a></li>
         </ul>
     </aside>
     
