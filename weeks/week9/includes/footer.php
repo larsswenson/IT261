@@ -12,7 +12,7 @@
             }
             ?></li>
             <li>All Rights Reserved</li>
-            <li><a href="../index.php">Web Design by Lars Swenson</a></li>
+            <li><a href="../../../it261/index.php">Web Design by Lars Swenson</a></li>
             <li><a id="html-checker" href="#">HTML Validation</a></li>
             <li><a id="css-checker" href="#">CSS Validation</a></li>
         </ul>

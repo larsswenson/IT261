@@ -16,19 +16,19 @@ if(isset($_POST['reg_user'])) {
     $username = mysqli_real_escape_string($iConn, $_POST['username']);
     $password_1 = mysqli_real_escape_string($iConn, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($iConn, $_POST['password_2']);
-if(empty('first_name')) {
+if(empty($first_name)) {
     array_push($errors, 'First name is required.');
     }
-if(empty('last_name')) {
+if(empty($last_name)) {
     array_push($errors, 'Last name is required.');
     }
-if(empty('email')) {
+if(empty($email)) {
     array_push($errors, 'Email is required.');
     }
-if(empty('username')) {
+if(empty($username)) {
     array_push($errors, 'User name is required.');
     }
-if(empty('password_1')) {
+if(empty($password_1)) {
     array_push($errors, 'Password is required.');
     }
 if($password_1 !== $password_2) {
